@@ -1,0 +1,22 @@
+.floating-label {
+    position: relative;
+  }
+  
+  .floating-label label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    padding: 4px 8px;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .floating-label input:not(:placeholder-shown) + label,
+  .floating-label textarea:not(:placeholder-shown) + label {
+    transform: translateY(-18px);
+    font-size: 12px;
+    background-color: white;
+    padding: 0 4px;
+  }
+  

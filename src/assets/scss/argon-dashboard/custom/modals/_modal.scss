@@ -1,0 +1,28 @@
+//
+// Modal
+//
+
+
+// Fluid modal
+
+.modal-fluid {
+    .modal-dialog {
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 4000px
+        
+    }
+    .modal-content {
+        border-radius: 0;
+        width: 4000px
+    }
+}
+
+
+// Background color variations
+
+@each $color, $value in $theme-colors {
+    .modal-#{$color} {
+        @include modal-variant($value);
+    }
+}

@@ -1,0 +1,7 @@
+/* TableHeader.css */
+.clickable-header {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+  }
+  

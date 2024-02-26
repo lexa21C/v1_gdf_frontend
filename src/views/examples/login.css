@@ -1,0 +1,14 @@
+.password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .custom-button {
+    background-color: rgb(247, 250, 252);
+    border: 1px solid #39a900;
+    color: black; /* Color del texto en negro */
+    /* Otros estilos según sea necesario */
+  } 
