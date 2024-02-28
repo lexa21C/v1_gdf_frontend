@@ -42,9 +42,8 @@ const Login = () => {
         email,
         password,
       })
-      console.log(response )
       if (response.data.status !== 'Error'){
-        console.log('error')
+
         const { tokenSession, user } = response.data;
         // localStorage.setItem("formation_program", user[0].formation_program[0]);
         // localStorage.setItem("_id", user[0]._id);
@@ -53,8 +52,7 @@ const Login = () => {
         localStorage.setItem("isLogin", true);
         setIsLoggendIn(localStorage.getItem("isLogin"))
         const updatedUserJson = user;
-        console.log('updated ')
-        console.log(updatedUserJson)
+  
     
         axios.defaults.headers.common['authorization'] = localStorage.getItem('token')
     

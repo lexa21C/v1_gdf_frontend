@@ -39,12 +39,11 @@ const ModalExample = ({ isOpen, toggle, apiGet, type }) => {
    const [nameButton, setNameButton] = useState("");
 
   useEffect(() => { 
-    console.log('entra al modal')
     if (type === true) {
       const fetchData = async () => {
         const { data } = await axios.get(apiGet);
         setData(data.results);
-        console.log(data)
+
       }
 
       fetchData();
@@ -53,7 +52,6 @@ const ModalExample = ({ isOpen, toggle, apiGet, type }) => {
       setNameButton("Actualizar");
 
     } else {
-      console.log('entra al modal')
       setData({
         labor_competition: '',
         labor_competence_code: '',

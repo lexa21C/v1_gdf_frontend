@@ -80,11 +80,10 @@ const [selectedOption, setSelectedOption] = useState(null);
   
 
   const handleSelectChange = (selectedOption) => {
-    console.log(selectedOption.target.value)
    setSelectedOption(selectedOption.target.value)
    
 };
-   // Function to fetch program data
+
    const fetchProgramData = async () => {
     try {
       const response = await axios.get(`api/v1/formation_programs`); // Replace with the correct API URL
@@ -118,7 +117,6 @@ const fecthProjectData = async () => {
     fetchProgramData()
     
     if(selectedOption == null) {   
-      console.log('projectos de la lista')
       fecthProjectData()
     }
     else(

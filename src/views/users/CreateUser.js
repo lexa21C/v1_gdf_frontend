@@ -56,7 +56,7 @@ const CreateUser = ({ isOpen, toggle, apiGet, type, apiGetP, user, apiGetCenter,
   const getTypeProfile = async () => {
     const { data } = await axios.get('/api/v1/profile');
     setTypeProfile(data.results)
-    console.log(typeProfile)
+
   };
   //^ api centros
   const getCenter = async () => {
@@ -66,12 +66,12 @@ const CreateUser = ({ isOpen, toggle, apiGet, type, apiGetP, user, apiGetCenter,
   const getProgram = async () => {
     const { data } = await axios.get('/api/v1/formation_programs');
     setPrograms(data.results)
-    console.log(programs)
+
   };
   useEffect(() => {
     if (type === true) {
       const Data = async () => {  
-       console.log('user edit', user)
+
        setSelectedPrograms(
         user.formation_program?.map((program ) => ({
           value: program?._id,
@@ -153,8 +153,7 @@ const CreateUser = ({ isOpen, toggle, apiGet, type, apiGetP, user, apiGetCenter,
   const edit = async () => {
     try {
       const response = await axios.put(`api/v1/user/${data._id}`, data);
-      // Handle the response as needed, e.g., show an alert or update state
-      console.log('Edit success:', response.data);
+
       setAlertType(response.data?.status);
         setAlertMessage(response.data?.message);
         setShowAlert(true);

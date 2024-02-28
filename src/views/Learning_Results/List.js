@@ -75,7 +75,7 @@ export default function List() {
     try {
       const { data } = await axios.get(`api/v1/learningResults/${competenceid}`);
       setResults(data.results);
-      console.log(results);
+
     } catch (error) {
       console.error('Error fetching data:', error);
       // Handle error as needed

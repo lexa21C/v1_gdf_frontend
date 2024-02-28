@@ -43,17 +43,16 @@ function UpdateModal(data) {
             }
 
             const save = saveData(id, type_program);
-            console.log(save);
-            
+
             //
             const res = await axios.put(`http://localhost:3005/typeProgram/${id}`, save).then(res => {
-                console.log(res);
+   
                 initModal();
                 mensajes();
             });
             
         } catch (error) {
-            console.log(error);
+  
             console.warn(error)
         }
     }

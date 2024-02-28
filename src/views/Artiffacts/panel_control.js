@@ -136,7 +136,7 @@ const Index = () => {
 
     const deletes1 = async (id) => {
         setShowAlert(true);
-        console.log(id)
+
         setDeleteItemId(id);
         setDeleteApi('artiffacts')
     }
@@ -157,7 +157,6 @@ const Index = () => {
                 `api/v1/quarter/${formation_program}`
             );
             setData(data.results);
-            console.log('quater:', data.results)
 
             const records = await axios.get(
                 `api/v1/records/${formation_program}`
@@ -167,7 +166,6 @@ const Index = () => {
                 await axios.get(`api/v1/artifacts/quarter/${quarterId}`).then(
                     ({ data }) => {
                         setArtiffacts(data.results)
-                        console.log(artiffacts)
                     }
                 )
             }

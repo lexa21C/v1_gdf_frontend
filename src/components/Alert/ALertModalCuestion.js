@@ -5,7 +5,6 @@ import axios from "axios";
 const AlertModal = ({api, onClose}) => {
   const handleDelete = async () => {
     try {
-      console.log(api)
       await axios.delete(api);
       onClose(false);
     } catch (error) {

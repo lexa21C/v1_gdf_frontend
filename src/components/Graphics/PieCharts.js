@@ -95,7 +95,7 @@ export default class PieChartGraphics extends PureComponent {
         console.log('La respuesta no es un array:', responseData);
       }
     } catch (error) {
-      console.log(error);
+      
       console.warn(error)
     }
   };

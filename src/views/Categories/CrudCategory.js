@@ -127,7 +127,6 @@ export default function ShowCategory() {
 
   const destroy = (id) => {
     setapiDeleteRecord(`api/v1/category/${id}`)
-    console.log('ALE')
     setAlertCuenstion(true)
   }
 

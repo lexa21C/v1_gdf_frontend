@@ -15,16 +15,10 @@ import {
 const fetchDataFromAPI = async (setData) => {
   try {
     const response = await axios.get('/api/v1/graphsProjectFp');
-    console.log('------------------------------------------')
-    console.log('------------------------------------------')
-    console.log(response)
-    console.log('------------------------------------------')
-    console.log('------------------------------------------')
+
 
     if (response.status === 200 && response.data && response.data.results) {
       const apiData = response.data.results;
-
-      console.log('Mapear los resultados de la API a un formato adecuado para la gráfica', apiData);
 
       const chartData = apiData.map((result) => {
         const name2 = result.programName;
@@ -39,7 +33,7 @@ const fetchDataFromAPI = async (setData) => {
 
       setData(chartData);
     } else {
-      console.error('Respuesta inválida de la API');
+      
     }
   } catch (error) {
     console.error('Error al obtener los datos de la API:', error);

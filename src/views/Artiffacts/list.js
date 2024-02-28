@@ -45,7 +45,6 @@ function LisModal(props) {
     }, [props.learningResult]);
 
     const handleArtifactChange = (index, event) => {
-        console.log('')
         const newArtifacts = [...artifacts];
         newArtifacts[index] = {
             ...newArtifacts[index],
@@ -57,7 +56,6 @@ function LisModal(props) {
     const handleEditArtifact = (index) => {
         const artifactToEdit = artifacts[index];
         axios.put(`api/v1/artiffacts/${artifactToEdit._id}`, artifactToEdit).then(
-            console.log(`Editing artifact: ${artifactToEdit.name}`)
         )
     };
 

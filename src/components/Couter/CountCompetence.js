@@ -14,7 +14,6 @@ const CountCompetence = () => {
         setCompetences(data);
         setCompetenceCount(data.length);
       } catch (error) {
-        // console.log(error);
         console.warn(error);
       }
     };

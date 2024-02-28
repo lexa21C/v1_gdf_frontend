@@ -20,7 +20,7 @@ export default function Modal({ isOpen, toggle, type,competences ,quarterId,OneA
     const handleChange = ({ currentTarget: input }) => {
         setData({ ...data, [input.name]: input.value });
     };
-     console.log(data);
+
 
     const handleSubmit = (e) => {   
         e.preventDefault();
@@ -28,14 +28,12 @@ export default function Modal({ isOpen, toggle, type,competences ,quarterId,OneA
             if (type === false) {
                 
                  axios.post('api/v1/artiffacts', data).then((response) => {
-                   console.log('modal')
-                   console.log(response)
+    
                    const { data: res } = response
                    if (response.data.code === 'success'){
-                        console.log('success')
                        show_alert('Creado Correctamente', 'success')
                 } else {
-                    console.log('error')
+
 
                        show_alert(response.data.message, 'Failed')
                     

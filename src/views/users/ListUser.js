@@ -67,16 +67,14 @@ export default function List() {
     try {
       const userResponse = await axios.get("api/v1/user");
       setUsers(userResponse.data.results);
-      console.log( 'response', users)
-      // const profileResponse = await axios.get("api/v1/profile");
-      // setProfiles(profileResponse.data.results);
+
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
     fetchData();
-    console.log('inresa al useEffre')
+
   }, [searchTerm, modal, showAlertCuestion]);
   
   // const filterUser = users?.filter(

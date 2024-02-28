@@ -64,10 +64,8 @@ const CreateProgram = ({ isOpen, toggle, apiGet, apiGetPrograms, type }) => {
 
   const getThematicLine = async () => {
     const { data } = await axios.get("api/v1/thematics");
-    console.log(data.results)
     setThematicLine(data.results);
-    console.log('linea tematica')
-    console.log(data.results)
+
    
   };
 
@@ -112,7 +110,6 @@ const CreateProgram = ({ isOpen, toggle, apiGet, apiGetPrograms, type }) => {
   };
 
   const fetchData = async () => {
-    console.log('trae los datos que muestra')
     const { data } = await axios.get(apiGet);
     setFormData(data.results);
     setSelectedCompetence(
@@ -139,11 +136,10 @@ const CreateProgram = ({ isOpen, toggle, apiGet, apiGetPrograms, type }) => {
         : null
     );
     setFormData(data.results);
-    console.log('data;', data)
   };
 
   const createProgramFormation = async () => {
-    console.log('dATOS ENVIADOS', formData)
+
     try {
       const res = await axios.post("api/v1/formation_program", formData);
 

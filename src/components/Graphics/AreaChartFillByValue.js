@@ -13,11 +13,7 @@ const AreaChartFillByValue = () => {
     try {
       const response = await axios.get('api/v1/graphsProjectCategory');
       setData(response.data);
-      console.log('------------------------------------------')
-      console.log(response.data)
-      console.log('------------------------------------------')
     } catch (error) {
-      console.log()
       console.error(error);
       // console.warn(error)
     }

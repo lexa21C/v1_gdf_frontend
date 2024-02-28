@@ -12,7 +12,7 @@ const CountRecords = () => {
                 const response = await axios.get('api/v1/records');
                 const data = response.data.results;
                 setRecords(data);
-                setResultCount(data.length);
+                setResultCount(Array.isArray(data) ? data.length : 0);
             } catch (error) {
                 console.warn(error);
             }
@@ -45,7 +45,7 @@ const CountRecords = () => {
         <div>
             <h2>{animatedCount}</h2>
             <ul>
-                {records.map((record, index) => (
+                {records && records.map((record, index) => (
                     <li key={record.id}>{record.id}</li>
                 ))}
             </ul>

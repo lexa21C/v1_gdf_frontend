@@ -25,8 +25,6 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 import routes from "../routes";
 import AdminNavbar from "components/Navbars/AdminNavbar";
 const Admin = (props) => {
-  console.log('props de layaout admin')
-  console.log(props)
   const mainContent = React.useRef(null);
   const location = useLocation();
   const [typeProfile, setTypeProfile] = React.useState(null);
@@ -37,8 +35,7 @@ const Admin = (props) => {
     mainContent.current.scrollTop = 0;
     const storedTypeProfile = localStorage.getItem('User');
     const json = JSON.parse(storedTypeProfile)
-    console.log('layaout')
-    console.log(json)
+
     setTypeProfile(json.type_profile[0].type_profile);
   }, [location]);       
 
@@ -57,7 +54,6 @@ const Admin = (props) => {
         // Si no hay rutas permitidas, redirigir a una página de acceso denegado o un mensaje de error
         return  navigate(-1)   
       }
-      console.log(typeProfile+'=='+route.name);
       
       return allowedRoutes.map((route, index) => {
         return <Route key={index} path={route.path} element={route.element} />;

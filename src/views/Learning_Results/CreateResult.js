@@ -30,14 +30,13 @@ const ModalResults = ({ isOpen, toggle, type, apiGetC }) => {
   const [nameButton, setNameButton] = useState("");
 
   useEffect(() => {
-    console.log('id competencia create:', competenceid)
+
     if (type === true) {  
       const fetchData = async () => {
         const { data } = await axios.get(apiGetC);
 
         setData(data.results);
-        console.log('---get--')
-        console.log(data.results)
+
       };
       fetchData();
       setTitle("Editar");
@@ -74,7 +73,6 @@ const ModalResults = ({ isOpen, toggle, type, apiGetC }) => {
 
     if (type === false) {
       
-      console.log('crear' ,data)
       axios.post('api/v1/learningResults', data).then(
         (res) => {
           if (res.data.status === 'success') {
@@ -103,8 +101,7 @@ const ModalResults = ({ isOpen, toggle, type, apiGetC }) => {
     } else {
      
       const { data: res } = axios.put(`api/v1/learningResults/${data._id}`, data).then((res)=>{
-        console.log('---editado--')
-        console.log(res.data.status)
+
         if (res.data.status === 'success') {
 
           toggle(!toggle);
@@ -112,7 +109,7 @@ const ModalResults = ({ isOpen, toggle, type, apiGetC }) => {
         setAlertType(res.data?.status);
         setAlertMessage(res.data?.message);
         setShowAlert(true);
-        console.log(res.data?.message)
+   
       }).catch((err)=>{
         setAlertType(err.status);
         setAlertMessage(err.message);

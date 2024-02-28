@@ -50,7 +50,7 @@ const ModalExample = ({ isOpen, toggle, apiGet, type }) => {
       const fetchData = async () => {
         const { data } = await axios.get(apiGet);
         setData(data.results);
-        console.log('ficha', data.results)
+  
       }
 
       fetchData();
@@ -87,7 +87,7 @@ const ModalExample = ({ isOpen, toggle, apiGet, type }) => {
 
 
   const handleResultSelected = (result) => {
-    console.log('handle', result)
+
     setData({ ...data, user: result });
   }
 

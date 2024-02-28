@@ -13,7 +13,6 @@ export default function Modal({ isOpen, toggle, type, competences, quarter }) {
     const [ competence, setCompetence] = useState([])
     const getCompetenceIdFormation = async () => {
         const {data} = await axios.get(`api/v1/competences/${formation_program}`);
-        console.log('competence', data.results)
         setCompetence(data.results)
     }
     useEffect(()=>{
@@ -57,15 +56,12 @@ export default function Modal({ isOpen, toggle, type, competences, quarter }) {
         try {
             if (type === false) {
                 axios.post('api/v1/quarter', data).then((response) => {
-                    console.log('modal')
-                    console.log(response)
                 const { data: res } = response
                 if (response.data.code === 'success'){
                     console.log('error')
                     show_alert('Creado Correctamente', 'success')
                 }
                 else {
-                    console.log('error')
                     show_alert(response.data.message, 'Failed')
                 }
                 });

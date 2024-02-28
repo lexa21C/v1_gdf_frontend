@@ -25,13 +25,12 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 import routes from "../routes";
 import AdminNavbar from "components/Navbars/InvitadoNavbar";
 const Invitado = (props) => {
-  console.log('invitado')
-  console.log(props.location)
+
   const mainContent = React.useRef(null);
   const location = useLocation();
 
   const isInvitado = location.pathname.startsWith("/invitado"); 
-  console.log(isInvitado)
+ 
   const [typeProfile, setTypeProfile] = React.useState(null);
   const navigate = useNavigate();
   React.useEffect(() => {
@@ -56,9 +55,7 @@ const Invitado = (props) => {
         // Si no hay rutas permitidas, redirigir a una página de acceso denegado o un mensaje de error
         return  navigate(-1)   
       }
-      console.log('rol')
-      console.log(typeProfile)
-      console.log(typeProfile+'=='+route.name);
+
       return allowedRoutes.map((route, index) => {
         return <Route key={index} path={route.path} element={route.element} />;
       });

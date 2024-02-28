@@ -46,20 +46,17 @@ function CreateModal(props) {
             e.preventDefault();
             const url = 'api/v1/artiffacts';
             const { data: res } = await axios.post(url, data).then((res) => {
-                console.log('create')
                 initModal();
                 mensajes();
                 setData({ ...data, name: '',description:''});
             });
-            console.log(res.message);
         } catch (error) {
-            console.log(error)
+
             if (error.response &&
                 error.response.status >= 400 &&
                 error.response.status <= 500
             ) {
                 setError(error.response.data);
-                console.error(error.response.data);
             }
         }
     }

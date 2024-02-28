@@ -124,11 +124,6 @@ export default function List() {
     }
   };
   useEffect(() => {
-    console.log('user', user);
-
-
-
-    // Set up Type Profile
     setupTypeProfile();
     
 

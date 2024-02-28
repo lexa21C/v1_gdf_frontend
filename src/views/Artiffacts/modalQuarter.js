@@ -29,9 +29,7 @@ export default function Modal({ isOpen, toggle, type, quarter }) {
 
       
     const getCompetenceIdFormation = async () => {
-        console.log('trae las competencia')
         const {data} = await axios.get(`api/v1/competences/${formation_program}`);
-        console.log('competence', data.results)
         setCompetence(data.results)
     }
     useEffect(()=>{
@@ -63,7 +61,6 @@ export default function Modal({ isOpen, toggle, type, quarter }) {
       }
 
       const handleSelectChangeCompetence = (selectedCompetence) => {
-        console.log('competencia seleccionada', selectedCompetence)
         setFormData({
           ...formData,
           competence: selectedCompetence.map((e) => e.value),

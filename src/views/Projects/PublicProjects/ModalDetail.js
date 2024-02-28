@@ -1,7 +1,7 @@
 import * as Reactstrap from "reactstrap";
 
 const ModalDetalleRegistro = ({ project, toggleShow }) => {
-  console.log(project)
+
   return (
     <Reactstrap.Modal 
     className=" modal-lg modal-dialog-centered "

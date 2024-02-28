@@ -127,7 +127,6 @@ export default function List() {
     };
   
     const getData = async () => {
-      console.log('getData');
       try {
         const response = await axios.get('api/v1/competences');
         setCompetences(response.data.results);
@@ -142,7 +141,6 @@ export default function List() {
     };
   
     useEffect(() => {
-      console.log('entra al useEffect')
       getData();
       const storedTypeProfile = localStorage.getItem('User');
       const json = JSON.parse(storedTypeProfile);

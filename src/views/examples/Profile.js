@@ -43,7 +43,6 @@ const Profile = () => {
    const fetchData = async () => {
     try {
       const response = await axios.get(`api/v1/user/show/${userJson._id}`);
-        console.log('actualizo');
         setData(response.data.results);
         localStorage.removeItem('User');
         localStorage.setItem('User', JSON.stringify(response.data.results));
@@ -65,7 +64,7 @@ const Profile = () => {
   const handleEditProfile = async () => {
     try {
       const response = await  axios.put(`api/v1/user/${userJson._id}`, data);
-      console.log(response)
+
       if ( response.data.status !== "success" ){
         setShowAlert(true);
       setAlertType(response.data.status);
