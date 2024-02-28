@@ -67,6 +67,7 @@ export default function List() {
     try {
       const userResponse = await axios.get("api/v1/user");
       setUsers(userResponse.data.results);
+      console.log(users)
 
     } catch (error) {
       console.log(error);

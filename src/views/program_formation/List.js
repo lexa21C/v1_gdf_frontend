@@ -173,12 +173,16 @@ export default function List() {
           <div className="col">
             <Reactstrap.Card className="shadow">
               <Reactstrap.CardHeader className="border-0">
-              <Reactstrap.Button color="primary"
-                  type="button"
-                  className="btn-circle btn-neutral "
-                  onClick={toggle}>
-                  <i className="ni ni-fat-add" />
-                </Reactstrap.Button>
+              {( typeProfile  === 'Administrador')  && (
+    <Reactstrap.Button color="primary"
+    type="button"
+    className="btn-circle btn-neutral "
+    onClick={toggle}>
+    <i className="ni ni-fat-add" />
+  </Reactstrap.Button>
+                              
+                            )}
+              
                 {/* Utilizar el componente SearchBar */}
                 <Search
                   searchTerm={searchTerm}

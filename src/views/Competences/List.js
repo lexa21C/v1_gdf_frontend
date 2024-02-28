@@ -158,6 +158,8 @@ export default function List() {
           <div className="col">
             <Reactstrap.Card className="shadow">
               <Reactstrap.CardHeader className="border-0">
+              {( typeProfile === 'Administrador')  && (
+                             
                 <Reactstrap.Button
                   color="primary"
                   type="button"
@@ -166,6 +168,8 @@ export default function List() {
                 >
                   <i className="ni ni-fat-add" />
                 </Reactstrap.Button>
+                            )}
+
 
                 {/* Utilizar el componente SearchBar */}
                 <Search
